@@ -1,0 +1,37 @@
+{
+  "name": "@fand/promisify",
+  "description": "Promisify without any dependencies",
+  "version": "0.0.1",
+  "author": "fand",
+  "bugs": {
+    "url": "https://github.com/fand/promisify/issues"
+  },
+  "devDependencies": {
+    "eslint": "^1.5.1",
+    "isparta": "^3.1.0",
+    "mocha": "^2.3.3",
+    "power-assert": "^1.0.1"
+  },
+  "files": [
+    "package.json",
+    "README.md",
+    "index.js"
+  ],
+  "homepage": "https://github.com/fand/promisify",
+  "keywords": [
+    "Promise"
+  ],
+  "license": "MIT",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/fand/promisify.git"
+  },
+  "scripts": {
+    "cover": "node $(npm bin)/isparta cover --report text --report html _mocha",
+    "lint": "eslint src test",
+    "prepublish": "npm run lint && npm run test",
+    "test": "mocha",
+    "travis": "npm run lint && npm run test"
+  }
+}
