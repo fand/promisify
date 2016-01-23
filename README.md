@@ -2,6 +2,7 @@
 [![Build Status](http://img.shields.io/travis/fand/promisify.svg?style=flat-square)](https://travis-ci.org/fand/promisify)
 [![NPM Version](https://img.shields.io/npm/v/@fand/promisify.svg?style=flat-square)](https://www.npmjs.com/package/@fand/promisify)
 [![License](http://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](http://fand.mit-license.org/)
+[![Coverage Status](https://img.shields.io/coveralls/fand/promisify.svg?style=flat-square)](https://coveralls.io/github/fand/promisify?branch=master)
 
 Promisify without any dependencies.
 

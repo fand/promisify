@@ -5,8 +5,12 @@ node_js:
 cache:
   directories:
   - node_modules
+before_install:
+- npm install -g coveralls
 script:
 - npm run travis
+after_success:
+- coveralls < ./coverage/lcov.info
 env:
   global:
     secure: qWTUAU93c8b/XDN8YW3ZDOijUGdJwfGGLXgbTa9KmkR1Cni8x6uz3ErxHWqb8mlE7ArEfgKgr8sDFzU31BSLfALapWRDKvZrjMp2x//NklY/SspARbDyo+UngpZG+7JqjJ3tUXcFwBDf8Tz+NbdXCQjgiU2n6Ldep0RkD0T4S+NM8EW/xRhQ/Majiz/kmO82Zacs3TON9HUU0Zjn6WIZT7csbXdeZ5i10rEbTxTbdDf/VwSzEoR6bzFKgk/d++Ko4FIaTK4qsnWhNFS1R3OAf/rSwdFex1LeW9tP7M/Utcw07y59ha8Juz9HKayoAAcKIO8LGCU/d2598zWsiHBvmV/ivJjUOfUEiXY3Gddk5gdcvCzTS/lrPH69oAEYMccScEVQ6+A3/D2Uca8x0lK1AgKPF6C+Z9HpMGFCIG2ALeIvjTT1E7vRNsGS/VCq1B5o1eGT0PA0GEXFxmsQ1jZIYnfhUAAX+E3jPl0BY+w/a4GFU16HBuNlbezeof0CfRwjQloOyL4ZXGGc/ediCaM7veo/vkFmIvmRb39HZGtLAcNf0vVMEtIa+Tq/J/nTKmbUEq2egVwKgDVGVZZWrCbmFMpSWWQvjiGYSHpLM+bplLEHZdI9U8Te3WkaEU4r3ecaj4/Tn25PJHbqL8a9QlUEGARC+iBUk+9hVxrGEV7w1h0=
