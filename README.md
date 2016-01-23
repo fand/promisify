@@ -1,29 +1,25 @@
-# map-merge
-[![Build Status](http://img.shields.io/travis/fand/map-merge.svg?style=flat-square)](https://travis-ci.org/fand/map-merge)
-[![NPM Version](https://img.shields.io/npm/v/@fand/map-merge.svg?style=flat-square)](https://www.npmjs.org/package/fand.map-merge)
+# Promisify
+[![Build Status](http://img.shields.io/travis/fand/promisify.svg?style=flat-square)](https://travis-ci.org/fand/promisify)
+[![NPM Version](https://img.shields.io/npm/v/@fand/promisify.svg?style=flat-square)](https://www.npmjs.com/package/@fand/promisify)
 [![License](http://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](http://fand.mit-license.org/)
+
+Promisify without any dependencies.
 
 ## Installation
 
 ```
-npm install -S @fand/map-merge
+npm install -S @fand/promisify
 ```
 
 ## Example
 
 ```js
-import mapMerge from "map-merge";
+var fs = require('fs');
+var p = require('@fand/promisify');
 
-const src = [{
-    name  : 'foo',
-    value : 123,    
-}, {
-    name  : 'bar',
-    value : 456,
-}]
-
-const dst = mapMerge(src, (e) => ({ [e.name] : e.value }));
-assert.deepEqual(dst, { foo : 123, bar : 456 });
+p(fs.readFile)
+  ('./package.json', 'utf8')
+  .then((res) => console.log(res));
 ```
 
 ## LICENSE
