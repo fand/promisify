@@ -1,8 +1,11 @@
 function promisify (target) {
-  // # of args except callback
-  var argsNum = target.length - 1;
-
   return function () {
+    // # of args except callback
+    var argsNum = target.length - 1;
+    if (target.length === 0) {
+      argsNum = arguments.length;
+    }
+
     // Get required arguments
     var args = [].slice.call(arguments, 0, argsNum);
 

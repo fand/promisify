@@ -54,4 +54,16 @@ describe('promisify', () => {
       });
   });
 
+  it('handles functions which uses arguments implicitly', (done) => {
+    var target = function () {
+      var callback = arguments[arguments.length - 1];
+      callback(null, msg);
+    };
+
+    promisify(target)().then(function (res) {
+      assert.equal(res, msg, 'Callback was called');
+      done();
+    });
+  });
+
 });
